@@ -1,4 +1,4 @@
-const CACHE_NAME = 'stark-kitchen-v3';
+const CACHE_NAME = 'stark-kitchen-v4';
 const ASSETS = [
   './',
   './index.html',

@@ -19,7 +19,7 @@ const DAY_PLANS = {
     breakfast: 'Leftover Sunday Egg Curry + Plain Dosa — Filter Coffee / Tea',
     curry: {
       name: 'Mixed Vegetable Sagu or Potato Tomato Kurma',
-      method: 'Use fridge-stable vegetables: potato, carrot, beans, peas, capsicum, onion and tomato. Cook in coconut-poppy seed sagu gravy or mild kurma gravy.',
+      method: 'Use fridge-stable vegetables: potato, carrot, beans, peas, cabbage, onion and tomato. Cook in coconut-poppy seed sagu gravy or mild kurma gravy.',
       note: 'Monday should not depend on delicate fresh vegetables. Avoid avarakkai here.'
     },
     poriyal: {
@@ -58,25 +58,25 @@ const DAY_PLANS = {
     protein: ['Paneer', 'Mushroom', 'Eggs'],
     breakfast: 'Leftover Kala Chana Curry + Plain Dosa or Set Dosa — Filter Coffee / Tea',
     curry: {
-      name: 'Paneer Mushroom Pepper Masala',
-      method: 'Saute mushroom first to remove water, add paneer cubes, onion-tomato masala, pepper, curry leaves and coriander. Keep it semi-dry or light gravy.',
-      note: 'Paneer and mushroom are staples, so they get a dedicated mid-week slot.'
+      name: 'Mushroom Curry or Paneer Curry',
+      method: 'Choose one. Mushroom curry: cook mushrooms in onion-tomato-coconut gravy with curry leaves. Paneer curry: add paneer cubes to mild tomato-coconut or onion-tomato gravy at the end.',
+      note: 'Paneer and mushroom are staples, but they should be separate curry options.'
     },
     poriyal: {
       name: 'Ivy Gourd (Kovakkai) Stir-fry',
       method: 'Slice thin, dry roast with mustard, red chilli powder, curry leaves, coconut.',
       note: 'Great for blood sugar regulation and digestion — very tasty dry stir-fry.'
     },
-    lunch: 'Rajmudi Rice + Paneer Mushroom Pepper Masala + Kovakkai Poriyal + Rasam + Curd + Papad',
+    lunch: 'Rajmudi Rice + Mushroom Curry or Paneer Curry + Kovakkai Poriyal + Rasam + Curd + Papad',
     snack: 'Sprouts or Sundal-style chana salad with onion, tomato, lemon and coriander',
-    dinner: 'Egg Dosa (3 — egg cracked on dosa, folded) + Tomato Chutney + leftover Paneer Mushroom Masala',
+    dinner: 'Egg Dosa (3 — egg cracked on dosa, folded) + Tomato Chutney + leftover Mushroom/Paneer Curry',
     tonight: 'Soak Rajma overnight — cook it tomorrow, Thursday'
   },
   4: { // Thursday
     icon: '🫘',
     subtitle: 'Legume curry day — Rajma',
     protein: ['Rajma', 'Eggs'],
-    breakfast: 'Leftover Paneer Mushroom Masala + Plain Dosa — Filter Coffee / Tea',
+    breakfast: 'Leftover Mushroom/Paneer Curry + Plain Dosa — Filter Coffee / Tea',
     curry: {
       name: 'Rajma Curry',
       method: 'Soaked Wednesday night, pressure cooked Thursday, simmered in thick onion-tomato gravy and finished with coriander.',
@@ -98,13 +98,13 @@ const DAY_PLANS = {
     protein: ['Paneer', 'Soya Chunks', 'Eggs'],
     breakfast: 'Leftover Rajma Curry + Plain Dosa or Pesarattu — Filter Coffee / Tea',
     curry: {
-      name: 'Paneer Capsicum Masala or Soya Chunk Masala',
-      method: 'Paneer: cook capsicum, onion and tomato masala, add paneer cubes at the end. Soya: soak chunks 20 mins in hot water, squeeze and cook in thick masala.',
+      name: 'Paneer Curry or Soya Chunk Masala',
+      method: 'Paneer: cook a mild onion-tomato-coconut gravy and add paneer cubes at the end. Soya: soak chunks 20 mins in hot water, squeeze and cook in thick masala.',
       note: 'Use paneer if available. Use soya as backup for high-protein pantry cooking.'
     },
     poriyal: {
       name: 'Cluster Beans (Goru Kaya / Kothavarangai) Stir-fry',
-      method: 'Chop, temper with mustard, urad dal, red chilli, grated coconut. Use snake gourd or capsicum if cluster beans are unavailable.',
+      method: 'Chop, temper with mustard, urad dal, red chilli, grated coconut. Use snake gourd or carrot-beans poriyal if cluster beans are unavailable.',
       note: 'Extremely high fibre, slightly nutty in taste.'
     },
     lunch: 'Rajmudi Rice + Paneer/Soya Masala + Cluster Beans Poriyal + Rasam + Curd + Papad',
@@ -123,8 +123,8 @@ const DAY_PLANS = {
       note: 'Buy only what is needed for Saturday. No storing for other days.'
     },
     poriyal: {
-      name: 'Capsicum & Onion Stir-fry or Brinjal Fry',
-      method: 'Both pair well with fish or prawn curry — use whichever is available.',
+      name: 'Brinjal Fry or Onion Raita Side',
+      method: 'Brinjal fry pairs well with fish or prawn curry. If brinjal is not available, keep it simple with onion raita and cucumber salad.',
       note: null
     },
     lunch: 'Rajmudi Rice + Fish/Prawn Curry + Poriyal + Onion Raita + Papad',
@@ -170,8 +170,7 @@ const VEGETABLES = [
   { name: 'Avarakkai (Broad Beans)', used: 'Tuesday poriyal only if fresh — do not hold too long' },
   { name: 'Ivy Gourd (Kovakkai)', used: 'Wednesday poriyal' },
   { name: 'Yam (Senaikizhangu)', used: 'Thursday poriyal' },
-  { name: 'Capsicum', used: 'Friday paneer masala + Saturday alternate poriyal' },
-  { name: 'Mushrooms', used: 'Wednesday Paneer Mushroom Pepper Masala — use fresh' },
+  { name: 'Mushrooms', used: 'Wednesday mushroom curry option — use fresh' },
   { name: 'Cluster Beans (Goru Kaya / Kothavarangai)', used: 'Friday poriyal — highest fibre' },
   { name: 'Spinach (Palak) / Methi', used: 'Thursday dinner dal + Saturday dinner greens' },
   { name: 'Drumstick (Murungakkai)', used: 'Sambar — use weekly' },

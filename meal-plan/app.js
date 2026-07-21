@@ -9,209 +9,213 @@ const MONTHS = ['January','February','March','April','May','June','July','August
 // Display order for the Week tab (Monday first, matching the original plan doc)
 const WEEK_ORDER = [1,2,3,4,5,6,0];
 
-const DAY_ICONS = ['🍳','🐟','🥘','🥘','🥘','🫓','🍤'];
+const DAY_ICONS = ['🍳','🥔','🥬','🥘','🌱','🫘','🍤'];
 
 const DAY_PLANS = {
   1: { // Monday
-    icon: '🐟',
-    subtitle: 'Fish or Prawn day — cook Saturday\'s refrigerated portion',
-    protein: ['Fish / Prawns', 'Eggs'],
-    breakfast: 'Leftover curry from Sunday + Plain Dosa — Filter Coffee / Tea',
+    icon: '🥔',
+    subtitle: 'Vegetable curry day',
+    protein: ['Eggs', 'Vegetables'],
+    breakfast: 'Leftover Sunday Egg Curry + Plain Dosa — Filter Coffee / Tea',
     curry: {
-      name: 'Fish Curry (Meen Kulambu) or Prawn Masala',
-      method: 'Whichever was bought Saturday and refrigerated. Cook with onion, tomato, tamarind, curry leaves, mustard, South Indian spices — minimal oil.',
-      note: 'High-protein, omega-3 rich — very good for post-workout recovery.'
+      name: 'Potato & Tomato Kurma or Mixed Vegetable Sagu',
+      method: 'Kurma: potato, tomato, onion, coconut paste, fennel, whole spices. Sagu: mixed vegetables in coconut-poppy seed gravy, South Indian style.',
+      note: 'Use whichever vegetables are freshest that day. Cook enough for lunch, dinner, and Tuesday morning.'
     },
     poriyal: {
-      name: 'Banana Stem (Vazhaithandu) Stir-fry',
-      method: 'Chop fine, temper with mustard, curry leaves, green chilli, coconut.',
-      note: 'Excellent for digestion and kidney health — use when available.'
+      name: 'Avarakkai (Broad Beans) Stir-fry',
+      method: 'Chop, boil lightly, temper with mustard, curry leaves, dry red chilli, grated coconut.',
+      note: 'Very high fibre, tasty, and family-friendly.'
     },
-    lunch: 'Rajmudi Rice + Fish/Prawn Curry + Banana Stem Poriyal + Rasam + Curd + Papad',
-    dinner: 'Chapati (3) + leftover Fish/Prawn Curry + Salad (cucumber, tomato, onion, lemon)',
-    tonight: 'Soak Kala Chana (Black Chickpeas) overnight for Tuesday\'s curry'
+    lunch: 'Rajmudi Rice + Vegetable Kurma/Sagu + Avarakkai Poriyal + Rasam + Curd + Papad',
+    dinner: 'Chapati (3) + same Kurma/Sagu + Salad',
+    tonight: 'Soak Kala Chana overnight — needed for Wednesday\'s curry'
   },
   2: { // Tuesday
-    icon: '🥘',
-    subtitle: 'Vegetarian + Eggs',
-    protein: ['Kala Chana', 'Eggs'],
-    breakfast: 'Plain Dosa + leftover fish curry (if any) or coconut chutney + Sambar — Filter Coffee / Tea',
+    icon: '🥬',
+    subtitle: 'Vegetable curry day',
+    protein: ['Eggs', 'Vegetables'],
+    breakfast: 'Leftover Monday Kurma/Sagu + Plain Dosa — Filter Coffee / Tea',
     curry: {
-      name: 'Kala Chana Curry',
-      method: 'Soaked overnight, pressure cooked, tempered with mustard, curry leaves, onion, tomato, grated coconut, South Indian spices.',
-      note: 'Black chickpeas are very high in protein and iron — ideal for workout days.'
+      name: 'Chow Chow & Chana Dal Kootu',
+      method: 'Cube chow chow, cook with chana dal, coconut paste, cumin, pepper — South Indian kootu style. No overnight soaking needed.',
+      note: 'Vegetable + lentil combo with protein and fibre without being heavy.'
     },
     poriyal: {
       name: 'Carrot & Beans Stir-fry',
-      method: 'Julienne carrot and beans, temper with mustard, urad dal, curry leaves, coconut.',
-      note: null
+      method: 'Julienne carrot and beans, temper with mustard, urad dal, curry leaves, grated coconut.',
+      note: 'High fibre, colourful, easy to cook — good for digestion.'
     },
-    lunch: 'Rajmudi Rice + Kala Chana Curry + Carrot Beans Poriyal + Sambar + Curd + Papad',
-    dinner: 'Chapati (3) + leftover Kala Chana Curry + Egg Bhurji (scrambled eggs with onion, tomato, green chilli, coriander)',
-    tonight: 'Soak Kabuli Chana (White Chickpeas) overnight for Wednesday\'s curry'
+    lunch: 'Rajmudi Rice + Chow Chow Kootu + Carrot Beans Poriyal + Sambar + Curd + Papad',
+    dinner: 'Chapati (3) + same Chow Chow Kootu + Egg Bhurji (scrambled eggs with onion, tomato, green chilli)',
+    tonight: null
   },
   3: { // Wednesday
     icon: '🥘',
-    subtitle: 'Vegetarian + Eggs',
-    protein: ['Kabuli Chana', 'Eggs'],
-    breakfast: 'Set Dosa (3, soft & spongy — same dosa batter) + Coconut Chutney + Sambar — Filter Coffee / Tea',
+    subtitle: 'Legume curry day — Kala Chana',
+    protein: ['Kala Chana', 'Eggs'],
+    breakfast: 'Leftover Chow Chow Kootu + Plain Dosa or Set Dosa — Filter Coffee / Tea',
     curry: {
-      name: 'Kabuli Chana Masala',
-      method: 'Soaked overnight, pressure cooked, rich onion-tomato-spice gravy, garnish with coriander.',
-      note: 'White chickpeas are very high in plant protein — great for muscle recovery.'
+      name: 'Kala Chana Curry',
+      method: 'Soaked overnight, pressure cooked, tempered with mustard, curry leaves, onion, tomato, grated coconut, South Indian spices.',
+      note: 'Black chickpeas are very high protein and iron — excellent for muscle building and energy.'
     },
     poriyal: {
-      name: 'Chow Chow (Chayote) Stir-fry',
-      method: 'Peel and cube, temper with mustard, curry leaves, coconut, green chilli.',
-      note: 'Low calorie, high fibre — very heart-friendly.'
+      name: 'Ivy Gourd (Kovakkai) Stir-fry',
+      method: 'Slice thin, dry roast with mustard, red chilli powder, curry leaves, coconut.',
+      note: 'Great for blood sugar regulation and digestion — very tasty dry stir-fry.'
     },
-    lunch: 'Rajmudi Rice + Kabuli Chana Masala + Chow Chow Poriyal + Rasam + Curd + Papad',
-    dinner: 'Egg Dosa (3 — egg cracked on dosa, folded) + Tomato Chutney + leftover Kabuli Chana Masala',
-    tonight: 'Soak Rajma (Red Kidney Beans) overnight for Thursday\'s curry'
+    lunch: 'Rajmudi Rice + Kala Chana Curry + Kovakkai Poriyal + Rasam + Curd + Papad',
+    dinner: 'Egg Dosa (3 — egg cracked on dosa, folded) + Tomato Chutney + leftover Kala Chana Curry',
+    tonight: 'Soak Rajma overnight — needed for Friday\'s curry'
   },
   4: { // Thursday
-    icon: '🥘',
-    subtitle: 'Vegetarian + Eggs',
-    protein: ['Rajma', 'Eggs'],
-    breakfast: 'Plain Dosa + leftover Kabuli Chana Masala or chutney + Sambar — Filter Coffee / Tea',
+    icon: '🌱',
+    subtitle: 'Vegetable / Soya curry day',
+    protein: ['Soya Chunks', 'Eggs'],
+    breakfast: 'Leftover Kala Chana Curry + Plain Dosa — Filter Coffee / Tea',
     curry: {
-      name: 'Rajma Curry',
-      method: 'Soaked overnight, pressure cooked, thick onion-tomato-spice gravy, garnish with coriander.',
-      note: 'Protein + fibre packed — one of the best plant proteins for muscle building.'
-    },
-    poriyal: {
-      name: 'Ivy Gourd (Tindora / Kovakkai) Stir-fry',
-      method: 'Slice thin, dry roast with mustard, curry leaves, red chilli powder, coconut.',
-      note: 'Great for blood sugar regulation and digestion.'
-    },
-    lunch: 'Rajmudi Rice + Rajma Curry + Kovakkai Poriyal + Sambar + Curd + Papad',
-    dinner: 'Chapati (3) + leftover Rajma + Palak Dal (spinach + toor dal — iron and protein rich, quick to make fresh)',
-    tonight: 'Soak Kondakadalai (Brown Chickpeas) overnight for Friday\'s curry'
-  },
-  5: { // Friday
-    icon: '🫓',
-    subtitle: 'Vegetarian + Eggs',
-    protein: ['Kondakadalai', 'Eggs'],
-    breakfast: 'Pesarattu (Moong Dal Dosa — grind moong dal fresh or soak 2 hrs) + Ginger Chutney — Filter Coffee / Tea',
-    curry: {
-      name: 'Kondakadalai (Brown Chickpea) Curry',
-      method: 'Soaked overnight, pressure cooked, South Indian style with coconut, small onions, tomato, tamarind touch, curry leaves.',
-      note: 'Brown chickpeas have the highest fibre among legumes — filling and heart-friendly.'
+      name: 'Soya Chunk Masala or Brinjal (Ennai Kathirikai) Curry',
+      method: 'Soya: soak chunks 20 mins in hot water, cook in thick onion-tomato-spice gravy. Brinjal: small brinjals slit and cooked in tamarind-onion-tomato gravy.',
+      note: 'Soya is the highest plant protein. Use brinjal alternate if that feels right or is freshest.'
     },
     poriyal: {
       name: 'Yam (Senaikizhangu) Fry',
-      method: 'Cube and parboil yam, then dry roast with red chilli, curry leaves, mustard, coconut.',
-      note: 'A good complex carb — better than potato for blood sugar.'
+      method: 'Cube, parboil, dry roast with red chilli, mustard, curry leaves, coconut.',
+      note: 'Better complex carb than potato — good sustained energy and high fibre.'
     },
-    lunch: 'Rajmudi Rice + Kondakadalai Curry + Yam Fry + Rasam + Curd + Papad',
-    dinner: 'Appam (3 — dosa batter + coconut milk swirled in) + Vegetable Stew (potato, carrot, beans in thin coconut milk) + leftover Kondakadalai Curry',
-    tonight: 'Buy fish/prawns fresh for tomorrow. Soak Kabuli Chana overnight if wanted for Saturday dinner (optional)'
+    lunch: 'Rajmudi Rice + Soya/Brinjal Curry + Yam Fry + Sambar + Curd + Papad',
+    dinner: 'Chapati (3) + same curry + Palak Dal (spinach + toor dal — quick to cook, iron + protein rich)',
+    tonight: null
+  },
+  5: { // Friday
+    icon: '🫘',
+    subtitle: 'Legume curry day — Rajma',
+    protein: ['Rajma', 'Eggs'],
+    breakfast: 'Leftover Thursday curry + Plain Dosa or Pesarattu — Filter Coffee / Tea',
+    curry: {
+      name: 'Rajma Curry',
+      method: 'Soaked overnight, pressure cooked, thick onion-tomato gravy, garnish with coriander.',
+      note: 'Protein + fibre packed — one of the best plant proteins for muscle building and heart health.'
+    },
+    poriyal: {
+      name: 'Cluster Beans (Goru Kaya / Kothavarangai) Stir-fry',
+      method: 'Chop, temper with mustard, urad dal, red chilli, grated coconut. Use snake gourd or capsicum if cluster beans are unavailable.',
+      note: 'Extremely high fibre, slightly nutty in taste.'
+    },
+    lunch: 'Rajmudi Rice + Rajma Curry + Cluster Beans Poriyal + Rasam + Curd + Papad',
+    dinner: 'Appam (3 — dosa batter + coconut milk) + Vegetable Stew (potato, carrot, peas in thin coconut milk) + leftover Rajma',
+    tonight: 'Buy fish and/or prawns fresh tonight or tomorrow morning for Saturday'
   },
   6: { // Saturday
     icon: '🍤',
-    subtitle: 'Fresh Fish & Prawn Day',
-    protein: ['Fish or Prawns', 'Eggs'],
-    breakfast: 'Masala Dosa (with potato-onion bhaji filling) + Sambar + Coconut Chutney — Filter Coffee / Tea',
+    subtitle: 'Fresh Fish & Prawn day — buy fresh, cook fresh, eat fresh',
+    protein: ['Fish or Prawns'],
+    breakfast: 'Leftover Rajma Curry + Masala Dosa or Plain Dosa — Filter Coffee / Tea',
     curry: {
-      name: 'Prawn Pepper Masala — or — Fish Curry (Meen Kulambu)',
-      method: 'Choose one based on what was bought. Prawn: fresh prawns, dry roast with pepper, curry leaves, small onions, coconut oil. Fish: tamarind-based, tomato, curry leaves.',
-      note: 'Keep one raw portion in fridge, labelled "Monday" — cook that on Monday.'
+      name: 'Prawn Pepper Masala or Meen Kulambu',
+      method: 'Choose one based on what was purchased. Prawn: dry masala with pepper, curry leaves, small onions, coconut oil. Fish: tamarind base, tomato, curry leaves.',
+      note: 'Buy only what is needed for Saturday. No storing for other days.'
     },
     poriyal: {
-      name: 'Brinjal (Kathirikai) Fry',
-      method: 'Small brinjal, slit and dry roast with red chilli, mustard, curry leaves — no oil frying.',
+      name: 'Capsicum & Onion Stir-fry or Brinjal Fry',
+      method: 'Both pair well with fish or prawn curry — use whichever is available.',
       note: null
     },
-    lunch: 'Rajmudi Rice + Fish or Prawn Curry + Brinjal Fry + Onion Raita + Papad',
-    dinner: 'Chapati (3) + leftover Fish/Prawn Curry + Stir-fried Greens (spinach or methi with garlic, quick sauté)',
-    tonight: 'Soak Kala Chana overnight for Monday (nanny back, cook Monday\'s curry)'
+    lunch: 'Rajmudi Rice + Fish/Prawn Curry + Poriyal + Onion Raita + Papad',
+    dinner: 'Chapati (3) + same Fish/Prawn Curry + Stir-fried Spinach or Methi (quick saute with garlic)',
+    tonight: null
   },
   0: { // Sunday
     icon: '🍳',
     subtitle: 'Nanny off — Simple egg-only cooking',
     warning: 'No fish or prawn cooking today. Keep it simple — eggs + dosa + dal only.',
     protein: ['Eggs', 'Moong Dal'],
-    breakfast: 'Uthappam (3 thick dosas with onion, tomato, capsicum on top) + Coconut Chutney — Filter Coffee / Tea',
+    breakfast: 'Uthappam (3 thick dosas with onion, tomato on top) + leftover Saturday fish curry if any, or coconut chutney — Filter Coffee / Tea',
     curry: {
       name: 'Egg Curry',
-      method: 'Boil eggs, make simple coconut-tomato gravy with curry leaves, mustard, onion.',
-      note: 'Quick and protein-rich.'
+      method: 'Boil eggs, make simple coconut-tomato gravy with curry leaves, mustard, small onions.',
+      note: 'Simple 30-minute dish — easy to manage without nanny.'
     },
     poriyal: {
       name: 'Moong Dal (simple)',
-      method: 'Pressure cook, temper with mustard, ghee, cumin, dry red chilli.',
-      note: 'Quick, light, protein-rich.'
+      method: 'Pressure cook, temper with mustard, cumin, ghee, dry red chilli.',
+      note: 'No soaking needed — very fast.'
     },
     lunch: 'Rajmudi Rice + Egg Curry + Moong Dal + Curd + Papad',
-    dinner: 'Lemon Rice (leftover Rajmudi rice + lemon + mustard tempering) + Egg Omelette (onion, green chilli, coriander) + leftover Egg Curry if any',
+    dinner: 'Lemon Rice (leftover Rajmudi rice + lemon + mustard tempering) + Egg Omelette (onion, green chilli, coriander) + leftover Egg Curry',
     tonight: null
   }
 };
 
 const BASE_CHECKLIST = [
-  { id: 'soak', label: 'Check tonight\'s soaking — soak legume for tomorrow' },
+  { id: 'soak', label: 'Check tonight\'s soaking schedule — soak legume if needed for day after tomorrow' },
   { id: 'sambar', label: 'Make sambar fresh (enough for 2 meals — bulk is fine)' },
-  { id: 'curry', label: 'Make one main curry — sufficient for lunch + dinner' },
+  { id: 'curry', label: 'Make one fresh curry in the afternoon — enough for lunch + dinner + next morning' },
   { id: 'poriyal', label: 'Make one poriyal fresh at lunch time' },
-  { id: 'chutney', label: 'Make fresh chutney every morning' },
   { id: 'rice', label: 'Use Rajmudi Red Rice — not white rice' }
 ];
 
 const VEGETABLES = [
-  { name: 'Tomatoes, Onions, Garlic, Ginger', used: 'Every day — curry base' },
-  { name: 'Banana Stem (Vazhaithandu)', used: 'Monday poriyal' },
+  { name: 'Tomatoes, Onions, Garlic, Ginger', used: 'Curry base — every single day' },
+  { name: 'Avarakkai (Broad Beans)', used: 'Monday poriyal — high fibre, very tasty' },
+  { name: 'Potato, Carrot, Beans, Peas', used: 'Monday Kurma / Friday Stew' },
+  { name: 'Chow Chow (Chayote)', used: 'Tuesday kootu' },
   { name: 'Carrot, Beans', used: 'Tuesday poriyal' },
-  { name: 'Chow Chow (Chayote)', used: 'Wednesday poriyal' },
-  { name: 'Ivy Gourd (Kovakkai / Tindora)', used: 'Thursday poriyal' },
-  { name: 'Yam (Senaikizhangu)', used: 'Friday poriyal' },
-  { name: 'Brinjal (small, for frying)', used: 'Saturday poriyal' },
+  { name: 'Ivy Gourd (Kovakkai)', used: 'Wednesday poriyal' },
+  { name: 'Yam (Senaikizhangu)', used: 'Thursday poriyal' },
+  { name: 'Brinjal (small variety)', used: 'Thursday curry alternate' },
+  { name: 'Cluster Beans (Goru Kaya / Kothavarangai)', used: 'Friday poriyal — highest fibre' },
   { name: 'Spinach (Palak) / Methi', used: 'Thursday dinner dal + Saturday dinner greens' },
-  { name: 'Drumstick (Murungakkai)', used: 'Sambar — buy weekly' },
-  { name: 'Potato, Carrot, Peas', used: 'Friday stew + Sunday lunch' },
+  { name: 'Drumstick (Murungakkai)', used: 'Sambar — use weekly' },
+  { name: 'Capsicum', used: 'Saturday poriyal + occasional use' },
   { name: 'Cucumber', used: 'Daily salad' },
-  { name: 'Snake Gourd / Capsicum / Corn', used: 'Bonus poriyal on any day available' }
+  { name: 'Snake Gourd', used: 'Occasional alternate poriyal' },
+  { name: 'Corn, Groundnuts', used: 'Evening snacks' }
 ];
 
 const SOAK_SCHEDULE = [
-  { legume: 'Kala Chana (Black Chickpeas)', cookDay: 'Mon & next Mon', soakNight: 'Sun night & Sat night', soakDow: [0,6] },
-  { legume: 'Kabuli Chana (White Chickpeas)', cookDay: 'Wednesday', soakNight: 'Tuesday night', soakDow: [2] },
-  { legume: 'Rajma (Red Kidney Beans)', cookDay: 'Thursday', soakNight: 'Wednesday night', soakDow: [3] },
-  { legume: 'Kondakadalai (Brown Chickpeas)', cookDay: 'Friday', soakNight: 'Thursday night', soakDow: [4] },
-  { legume: 'Moong Dal', cookDay: 'Sunday + Pesarattu Fri', soakNight: 'No soaking needed', soakDow: [] }
+  { legume: 'Kala Chana (Black Chickpeas)', cookDay: 'Wednesday', soakNight: 'Monday night', soakDow: [1] },
+  { legume: 'Rajma (Red Kidney Beans)', cookDay: 'Friday', soakNight: 'Wednesday night', soakDow: [3] },
+  { legume: 'Chana Dal (for Kootu)', cookDay: 'Tuesday', soakNight: 'No overnight soaking needed', soakDow: [] },
+  { legume: 'Moong Dal', cookDay: 'Sunday', soakNight: 'No soaking needed', soakDow: [] }
 ];
 
 const PANTRY = [
   'Rajmudi Red Rice',
   'Dosa batter (fresh or store-bought — no idli ever)',
-  'Toor Dal, Moong Dal, Urad Dal, Chana Dal',
+  'Toor Dal, Moong Dal, Chana Dal, Urad Dal',
+  'Soya chunks (for Thursday curry)',
   'Tamarind block, Mustard seeds, Curry leaves, Dry red chillies',
   'Fresh coconut (grated) or frozen coconut',
   'Sambar powder, Rasam powder, Chettinad masala, Pepper powder',
-  'Coconut milk tetra pack (for Friday Appam + Stew)',
-  'Groundnuts (for evening snack)',
-  'Ghee (small quantity for dal tadka and pongal)'
+  'Coconut milk tetra pack (for Friday stew + Appam)',
+  'Ghee (small amount — dal tadka, tempering)',
+  'Groundnuts, Corn (evening snacks)'
 ];
 
 const RULES = [
-  { icon: '🍛', text: 'One curry cooked per day — same curry serves lunch, dinner, and often next morning with dosa' },
-  { icon: '🥬', text: 'One poriyal / stir-fry made fresh at lunch daily' },
+  { icon: '☀️', text: 'Mornings: no fresh cooking. Serve yesterday\'s leftover curry with dosa or chapati' },
+  { icon: '🍛', text: 'Afternoons: cook one fresh curry + one fresh poriyal. This serves lunch, dinner, and next morning' },
   { icon: '🍚', text: 'Rice: always Rajmudi Red Rice — healthy, low GI, fibre-rich' },
   { icon: '🚫', text: 'No idli ever — dosa batter only (plain dosa, set dosa, uthappam, egg dosa, masala dosa, appam)' },
-  { icon: '🐟', text: 'Fish & Prawns bought fresh Saturday only — cooked Saturday. Leftovers refrigerated → cooked Monday' },
+  { icon: '🥘', text: 'Curry variety: mostly vegetable-based curries. Legumes only 2 days a week. Eggs and soya rotated in' },
+  { icon: '🐟', text: 'Fish & Prawns bought fresh Saturday only — cooked Saturday, eaten fresh. No fish any other day' },
   { icon: '☀️', text: 'Sunday: Nanny off — simple egg-only cooking, no fish, no heavy prep' },
-  { icon: '🫘', text: 'Legumes must be soaked the night before — reminder given in previous night\'s notes' },
-  { icon: '💪', text: 'Protein goal: high protein daily for family fitness — legumes, eggs, and fish/prawns are the main sources' }
+  { icon: '🫘', text: 'Soaking reminders appear in the previous night\'s notes wherever legumes are needed next day' },
+  { icon: '💪', text: 'High protein plan for active family — vegetables, eggs, legumes, soya, fish/prawns, and Rajmudi rice' }
 ];
 
 const HEALTH_NOTES = [
   'Rajmudi Red Rice has more protein, fibre and iron than white rice — always use this',
-  'Legumes daily — best plant protein source, cook them properly (pressure cook after soaking)',
+  'Legumes only Wednesday and Friday — pressure cook properly after soaking',
   'Do not skip rasam — it aids digestion and absorption of nutrients',
   'Minimal oil — use coconut oil or cold-pressed groundnut oil only',
   'Fresh coconut in small amounts in poriyal and chutney is healthy — don\'t remove it',
-  'Eggs daily — complete protein, important for muscle building and recovery',
-  'Fish and prawns on Sat + Mon — omega-3 fatty acids, lean protein, excellent for heart and muscles',
-  'Prefer steaming, boiling, pressure cooking over frying wherever possible'
+  'Eggs almost every day — complete protein, important for muscle recovery',
+  'Soya chunks on Thursday — highest plant protein, excellent post-workout',
+  'Fish and prawns on Saturday only — omega-3 fatty acids, lean protein, excellent for heart and muscles',
+  'Avarakkai and Cluster Beans are two of the most fibre-rich vegetables in South Indian cooking'
 ];
 
 // ===================================================================
@@ -402,7 +406,7 @@ function renderChecklist() {
   if (!checklistState[key]) checklistState[key] = {};
 
   const items = [...BASE_CHECKLIST];
-  if (dow === 6) items.push({ id: 'fish', label: 'Buy fish/prawns, cook one portion, refrigerate second labelled "Monday"' });
+  if (dow === 6) items.push({ id: 'fish', label: 'Saturday only: buy fish/prawns fresh, cook same day, no storing' });
   if (dow === 0) items.push({ id: 'sunday-simple', label: 'Keep it simple — egg curry + dal + dosa only. No fish. No heavy cooking.' });
 
   let doneCount = 0;

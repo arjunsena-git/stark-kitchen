@@ -1,7 +1,7 @@
 {
   "name": "Stark Kitchen — Meal Protocol",
   "short_name": "Stark Kitchen",
-  "description": "Weekly South Indian meal plan with daily overrides and shopping list, Iron Man themed.",
+  "description": "Vegetarian-first South Indian weekly meal plan with eggs, Saturday fish/prawns, daily overrides, and shopping list.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

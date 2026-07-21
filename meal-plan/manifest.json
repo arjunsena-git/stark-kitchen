@@ -1,7 +1,7 @@
 {
   "name": "Stark Kitchen — Meal Protocol",
   "short_name": "Stark Kitchen",
-  "description": "Vegetarian-first South Indian weekly meal plan with eggs, Saturday fish/prawns, daily overrides, and shopping list.",
+  "description": "Vegetarian-first South Indian weekly meal plan with paneer, mushroom, eggs, healthy snacks, Saturday fish/prawns, overrides, and shopping list.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
